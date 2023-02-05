@@ -1,0 +1,15 @@
+export const LOAD_BLOGS = "LOAD_BLOGS";
+
+export const SORT_BY_UPLOAD = "SORT_BY_UPLOAD";
+
+export const READING_HISTORY='READING_HISTORY';
+
+export const BLOG_DETAILS='BLOG_DETAILS'
+
+
+// BLOG CRUD OPERATION
+export const UPLOAD_BLOG='UPLOAD_BLOG';
+export const EDIT_BLOG='EDIT_BLOG';
+export const UPDATE_BLOG='UPDATE_BLOG';
+export const DELETE_BLOG='DELETE_BLOG';
+
