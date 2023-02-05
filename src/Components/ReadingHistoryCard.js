@@ -1,6 +1,9 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { alreadyRead } from "../Redux/ActionCreator/blogActions";
 
 const ReadingHistoryCard = ({ blog }) => {
+    const dispatch=useDispatch();
   return (
     <div class=" mx-auto mt-10">
       <div class="bg-white shadow-md border border-gray-200 rounded-lg">
@@ -16,6 +19,7 @@ const ReadingHistoryCard = ({ blog }) => {
             {blog?.content}
           </p>
           <button
+          onClick={()=>dispatch(alreadyRead(blog?._id))}
             class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
             Already Read

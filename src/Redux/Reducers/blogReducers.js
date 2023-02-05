@@ -1,4 +1,5 @@
 import {
+  ALREADY_READ,
   BLOG_DETAILS,
   DELETE_BLOG,
   LOAD_BLOGS,
@@ -55,7 +56,24 @@ export const blogReducers = (state = initialState, action) => {
           state.blogs.find((blog) => blog._id === action.payload),
         ],
       };
-
+    case ALREADY_READ:
+      const readBlog = state.readingHistory.find(
+        (blog) => blog._id === action.payload
+      );
+      if (readBlog) {
+        return {
+          ...state,
+          readingHistory: [
+            ...state.readingHistory.filter(
+              (blog) => blog._id !== action.payload
+            ),
+            { ...readBlog, alreadyRead: true },
+          ],
+        };
+      }
+      return {
+        ...state,
+      };
     default:
       return state;
   }

@@ -1,4 +1,4 @@
-import { BLOG_DETAILS, DELETE_BLOG, LOAD_BLOGS, READING_HISTORY, UPDATE_BLOG, UPLOAD_BLOG } from "../ActionTypes/actionTypes";
+import { ALREADY_READ, BLOG_DETAILS, DELETE_BLOG, LOAD_BLOGS, READING_HISTORY, UPDATE_BLOG, UPLOAD_BLOG } from "../ActionTypes/actionTypes";
 
 export const loadBlogData = (data) => {
     return {
@@ -37,6 +37,13 @@ export const loadBlogData = (data) => {
   export const readingHistoryAction=(id)=>{
     return{
       type:READING_HISTORY,
+      payload:id
+    }
+  }
+
+  export const alreadyRead=(id)=>{
+    return {
+      type:ALREADY_READ,
       payload:id
     }
   }
