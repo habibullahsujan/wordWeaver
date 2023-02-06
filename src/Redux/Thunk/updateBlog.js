@@ -1,6 +1,6 @@
 export const updateBlog = (blog, id) => {
   return async (dispatch, getState) => {
-    const res = await fetch(`http://localhost:5000/blog/${id}`, {
+    const res = await fetch(`https://wordweaver-server.vercel.app/blog/${id}`, {
       method: "PUT",
       body: JSON.stringify(blog),
       headers: {

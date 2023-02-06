@@ -2,7 +2,7 @@ import { uploadBlogData } from "../ActionCreator/blogActions";
 
 export const uploadBlog = (blog) => {
   return async (dispatch, getState) => {
-    const res = await fetch("http://localhost:5000/blog", {
+    const res = await fetch("https://wordweaver-server.vercel.app/blog", {
       method: "POST",
       body: JSON.stringify(blog),
       headers: {
